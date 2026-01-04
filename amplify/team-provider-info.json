@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-smragrob-dev-530d0-authRole",
+      "UnauthRoleArn": "arn:aws:iam::506160144098:role/amplify-smragrob-dev-530d0-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::506160144098:role/amplify-smragrob-dev-530d0-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-smragrob-dev-530d0-deployment",
+      "UnauthRoleName": "amplify-smragrob-dev-530d0-unauthRole",
+      "StackName": "amplify-smragrob-dev-530d0",
+      "StackId": "arn:aws:cloudformation:us-east-1:506160144098:stack/amplify-smragrob-dev-530d0/81506790-e96e-11f0-b3b4-0e7e7db68d2b",
+      "AmplifyAppId": "d2y9x9nipfdnag"
+    },
+    "categories": {
+      "function": {
+        "master": {}
+      }
+    }
+  }
+}
