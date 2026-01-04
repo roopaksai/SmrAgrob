@@ -6,7 +6,16 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-src = {editable = true, path = "./src"}
+flask = "*"
+openai = "*"
+passlib = "*"
+pymongo = "*"
+aws-wsgi = "*"
+requests = "*"
+flask-cors = "*"
+flask-restful = "*"
+firebase-admin = "*"
+flask-jwt-extended = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.13"

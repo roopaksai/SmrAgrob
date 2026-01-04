@@ -16,5 +16,29 @@
         "master": {}
       }
     }
+  },
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-smragrob-master-a9dda-authRole",
+      "UnauthRoleArn": "arn:aws:iam::506160144098:role/amplify-smragrob-master-a9dda-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::506160144098:role/amplify-smragrob-master-a9dda-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-smragrob-master-a9dda-deployment",
+      "UnauthRoleName": "amplify-smragrob-master-a9dda-unauthRole",
+      "StackName": "amplify-smragrob-master-a9dda",
+      "StackId": "arn:aws:cloudformation:us-east-1:506160144098:stack/amplify-smragrob-master-a9dda/2a11c7f0-e971-11f0-9cf4-0afffb7187cf",
+      "AmplifyAppId": "d2y9x9nipfdnag"
+    },
+    "categories": {
+      "function": {
+        "master": {
+          "deploymentBucketName": "amplify-smragrob-master-a9dda-deployment",
+          "s3Key": "amplify-builds/master-507a79677a7656793546-build.zip"
+        }
+      },
+      "api": {
+        "masterapi": {}
+      }
+    }
   }
 }
