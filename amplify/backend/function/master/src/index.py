@@ -3,7 +3,7 @@ from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
 from services.controller import *
-from configs import Config as config
+from configs import CONFIG as config
 from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
@@ -15,7 +15,7 @@ api = Api(app)
 JWTManager(app)
 CORS(app, supports_credentials=True)
 
-api.add_resource(HelloWorldService, '/api/hello')
+api.add_resource(AuthService, '/api/auth')
 
 def handler(event, context) -> dict:
     print(event)
