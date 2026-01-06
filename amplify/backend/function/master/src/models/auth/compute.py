@@ -47,10 +47,14 @@ class Compute:
         user._id = self.user_collection.insert_one(
             Common.filter_none_values(user.__dict__)
         ).inserted_id
+
+        user_data = user.__dict__
+        user_data.pop('password', None)
+
         return Output(
             output_details={
                 **self.generate_tokens(str(user._id)),
-                'user': Common.jsonify(user.__dict__)
+                'user': Common.jsonify(user_data)
             },
             output_message='Successfully signed up.'
         )
@@ -72,10 +76,13 @@ class Compute:
                 output_status=OutputStatus.FAILURE
             )
 
+        user_data = user.__dict__
+        user_data.pop('password', None)
+
         return Output(
             output_details={
                 **self.generate_tokens(str(user._id)),
-                'user': Common.jsonify(user.__dict__)
+                'user': Common.jsonify(user_data)
             },
             output_message='Successfully signed in.'
         )

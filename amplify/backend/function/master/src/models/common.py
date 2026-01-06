@@ -93,10 +93,15 @@ class Common:
 
     @staticmethod
     def filter_falsy_values(data):
-        """Recursively remove None values from a dictionary or list."""
+        """Recursively filter values from nested dictionaries and lists.  
+
+        For dictionaries, removes keys whose values are None, empty strings,  
+        empty lists, empty dictionaries, or 0, then recurses into remaining values.  
+        For lists, removes None values and recurses into remaining items.  
+        """ 
         if isinstance(data, dict):
             data = {k: v for k, v in data.items() if v is not None and v not in [
-                '', [], {}, 0]}
+                '', [], {}]}
             return {k: Common.filter_falsy_values(v) for k, v in data.items()}
         elif isinstance(data, list):
             return [Common.filter_falsy_values(v) for v in data if v is not None]

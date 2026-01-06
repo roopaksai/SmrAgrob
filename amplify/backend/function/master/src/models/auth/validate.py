@@ -18,7 +18,7 @@ class Validator:
         if self.input.user_type == UserType.admin.value:
             return admin.get('user_type') == UserType.super.value
         if self.input.user_type == UserType.super.value:
-            return self.input.user_type == UserType.super.value
+            return admin.get('user_type') == UserType.super.value
         return True
 
     @jwt_required()
