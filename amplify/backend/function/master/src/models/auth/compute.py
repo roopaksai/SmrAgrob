@@ -3,16 +3,16 @@ from passlib.hash import pbkdf2_sha256
 from db.user import get_user_collection
 from models.constants import OutputStatus
 from models.interfaces import UserAuthInput as Input, Output, User
-from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
+from flask_jwt_extended import create_access_token, create_refresh_token, get_jwt_identity, jwt_required
 
 
 class Compute:
     def __init__(self, input: Input) -> None:
         self.input = input
-        self.query = self.decide_query()
+        self.query = self.build_user_query()
         self.user_collection = get_user_collection()
 
-    def decide_query(self) -> str:
+    def build_user_query(self) -> str:
         query = {}
         if self.input.phoneNumber:
             query['phoneNumber'] = self.input.phoneNumber
@@ -27,7 +27,7 @@ class Compute:
 
     def generate_tokens(self, user_id: str) -> dict:
         access_token = create_access_token(identity=user_id)
-        refresh_token = create_access_token(identity=user_id)
+        refresh_token = create_refresh_token(identity=user_id)
         return {
             'access_token': access_token,
             'refresh_token': refresh_token
