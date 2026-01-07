@@ -5,7 +5,7 @@ from configs.prod_config import ProdConfig
 ENV = os.environ.get("ENV", "dev")
 if ENV == "master":
     print("Using Prod Config")
-    Config = ProdConfig
+    CONFIG = ProdConfig
 else:
     print("Using Dev Config")
-    Config = DevConfig
+    CONFIG = DevConfig

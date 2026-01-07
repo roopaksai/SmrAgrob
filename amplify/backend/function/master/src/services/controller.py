@@ -1,1 +1,1 @@
-from services.src.hello import HelloWorldService
+from services.src.auth import AuthService
